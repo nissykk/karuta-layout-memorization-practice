@@ -159,3 +159,37 @@ h2, h3 {
     cursor: default;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
+
+/* --- クリック選択中の札スタイル --- */
+.fuda.selected {
+    position: absolute; /* 文書の流れから切り離し、座標で指定 */
+    z-index: 1000;      /* 他の要素より手前に表示 */
+    opacity: 0.7;       /* 少し半透明に */
+    transform: scale(1.05) rotate(3deg); /* 少し大きく傾ける */
+    pointer-events: none; /* 札自身がクリックイベントを受け取らないように */
+    cursor: default;    /* カーソルをデフォルトに */
+}
+
+/* 選択解除時のアニメーション（任意） */
+.fuda {
+    /* ...既存の .fuda スタイルに追加... */
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out; /* opacityも追加 */
+}
+
+/* ドラッグ関連のカーソル指定を削除またはコメントアウト */
+/*
+.fuda {
+    cursor: grab;
+}
+.fuda.dragging {
+     cursor: grabbing;
+}
+*/
+
+/* グループのハイライトも不要なら削除 */
+/*
+.left-group.drag-over, .right-group.drag-over {
+    background-color: rgba(255, 255, 0, 0.3);
+    border: 1px dashed #333;
+}
+*/
