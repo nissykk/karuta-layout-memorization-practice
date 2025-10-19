@@ -199,4 +199,7 @@ h2, h3 {
     line-height: 1;
 }
 
-/* --- 以下、既存の他のスタイル ... --- */
+/* --- 裏向きの札のIDを非表示にする --- */
+.fuda.back .fuda-id {
+    display: none;
+}
